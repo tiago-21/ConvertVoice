@@ -4,15 +4,62 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Write Voice test</title>
+        <title>Convert Voice | Converta sua voz em texto</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
-        <link rel="stylesheet" href="style/style.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="public/style/style.css">
+
+        <!-- Logo do favicon -->
+        <link rel="apple-touch-icon" sizes="180x180" href="/public/style/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/public/style/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/public/style/favicon-16x16.png">
+        <link rel="manifest" href="/public/style/site.webmanifest">
     </head>
 
     <body>
-        <p>testando no vscode</p>
+        <header>
+            <div class="img">
+                <a href="index.html">
+                    <img src="/public/style/favicon.ico" alt="Logo Convert Voice" width="40">
+                </a> <br>
+                <span>Convert Voice</span> <br>
+                <!-- <span>Simples, rápido e fácil</span> -->
+            </div>
+        </header>        
+
+        <div class="container">
+            <article>
+                <h4>
+                    Tá sem tempo e precisando escrever um texto enorme? Ou precisa documentar muitas informações de uma aula e não sabe como anotar tudo? <br>
+                    Deixa o Convert Voice te ajudar.
+                </h4>
+                <h6>
+                    A ferramenta possibilita que você fale e automaticamente tudo que você disser será escrito.
+                </h6>
+            </article>
+        
+            <div class="words"></div> <br>
+            
+            <button class="btn btn-success" type="button" id="btn_speech" onclick="doStartStopCheck()">
+                <i class="fa-solid fa-play"></i> Transcrever Áudio
+            </button>
+
+            <button class="btn btn-warning" type="button" id="btn_paragrafo" onclick="paragrafo()">
+                <i class="fa-solid fa-paragraph"></i> Parágrafo
+            </button>
+
+            <button class="btn btn-primary" type="button" id="btn_baixar" onclick="baixar()">
+                <i class="fa-solid fa-file-arrow-down"></i> Baixar texto
+            </button>
+
+            <button class="btn btn-secondary" type="button" onclick="apagar()">
+                <i class="fa-solid fa-eraser"></i> Apagar texto
+            </button>
+            
+            <footer></footer>
+        </div>
     </body>
 
-    <script src="javascript/app.js"></script>
+    <script src="public/javascript/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>    
 </html>
