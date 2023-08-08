@@ -6,19 +6,25 @@
 }
 
 body {
-    background-color: rgb(28, 30, 51);
-    color: white;
+    /* background-color: rgb(28, 30, 51); */
+    color: black;
     text-align: justify;
 }
 
 /* header da aplicação */
 header {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     box-sizing: border-box;
     padding: 7px;
-    margin-bottom: 2em;    
+    margin-bottom: 2em;
+    background-color: rgb(28, 30, 51);
+    color: white;
+}
+
+.links a {
+    margin: 0 2em 0 3em;
 }
 
 /* imagem e texto */
@@ -49,4 +55,27 @@ article {
 .botoes button {
     margin: 0 0.5em;
     border-radius: 10px;
+    color: white;
+}
+
+footer {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+    background-color: rgb(28, 30, 51);    
+    padding: 12px;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer span, a {
+    text-decoration: none;
+    color: white;
+}
+
+footer .detalhes {
+    text-align: center;
 }
