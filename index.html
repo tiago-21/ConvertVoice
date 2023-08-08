@@ -17,47 +17,46 @@
     </head>
 
     <body>
-        <header>
-            <div class="img">
-                <a href="index.html">
-                    <img src="public/style/icons/favicon.ico" alt="Logo Convert Voice" width="40">
-                </a> <br>
-                <span>Convert Voice</span> <br>
-                <!-- <span>Simples, rápido e fácil</span> -->
-            </div>
-        </header>
-
         <div class="container">
-            <article>
-                <h4>
-                    Tá sem tempo e precisando escrever um texto enorme? Ou precisa documentar muitas informações de uma aula e não sabe como anotar tudo? <br>
-                    Deixa o Convert Voice te ajudar.
-                </h4>
+            <header>
+                <div class="img">
+                    <a href="index.html">
+                        <img src="public/style/icons/favicon.ico" alt="Logo Convert Voice" width="40">
+                    </a> <br>
+                    <span>Convert Voice</span> <br>                
+                </div>
+            </header>
+
+            <article>                
                 <h6>
+                    Tá sem tempo e precisando escrever um texto enorme? Ou precisa documentar muitas informações de uma aula e não sabe como anotar tudo?
+                    O Convert Voice pode te ajudar. <br>
                     A ferramenta possibilita que você fale e automaticamente tudo que você disser será escrito.
-                </h6>
+                </h6>                
             </article>
         
             <div class="words"></div> <br>
             
-            <button class="btn btn-success" type="button" id="btn_speech" onclick="doStartStopCheck()">
-                <i class="fa-solid fa-play"></i> Transcrever Áudio
-            </button>
+            <div class="botoes">
+                <button class="btn btn-success" type="button" id="btn_speech" onclick="doStartStopCheck()">
+                    <i class="fa-solid fa-play"></i> Transcrever Áudio
+                </button>
 
-            <button class="btn btn-warning" type="button" id="btn_paragrafo" onclick="paragrafo()">
-                <i class="fa-solid fa-paragraph"></i> Parágrafo
-            </button>
+                <button class="btn btn-warning" type="button" id="btn_paragrafo" onclick="paragrafo()">
+                    <i class="fa-solid fa-paragraph"></i> Parágrafo
+                </button>
 
-            <button class="btn btn-primary" type="button" id="btn_baixar" onclick="baixar()">
-                <i class="fa-solid fa-file-arrow-down"></i> Baixar texto
-            </button>
+                <button class="btn btn-primary" type="button" id="btn_baixar" onclick="baixar()">
+                    <i class="fa-solid fa-file-arrow-down"></i> Baixar texto
+                </button>
 
-            <button class="btn btn-secondary" type="button">
-                <i class="fa-solid fa-eraser"></i> Apagar texto
-            </button>
+                <button class="btn btn-secondary" type="button" id="btn_limpar" onclick="apagar()">
+                    <i class="fa-solid fa-eraser"></i> Apagar texto
+                </button>
+            </div>
             
             <footer></footer>
-        </div>
+        </div>        
     </body>
 
     <script src="public/javascript/app.js"></script>

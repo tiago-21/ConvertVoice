@@ -61,17 +61,10 @@ function rolaScroll(){
     w.scrollTop = w.scrollHeight;
 }
 
-// função de parágrafo
-function paragrafo() {
-
-    var elemento = document.querySelector('.words').value;
-
-    if(elemento) {
-        var textoAtual = elemento.innerHTML;
-        var textoQuebra = textoAtual.replace(/\n/g, "br");
-        elemento.innerHTML = textoQuebra;
-    }
-}
-
-function apagar() {}
 setInterval(rolaScroll, 1000);
+
+
+
+
+
+

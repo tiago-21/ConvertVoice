@@ -1,4 +1,15 @@
 
+/* regras gerais para todo site */
+* {
+    /* color: white;
+    background-color: rgb(28, 30, 51); */
+}
+
+body {
+    background-color: rgb(28, 30, 51);
+    color: white;
+    text-align: justify;
+}
 
 /* header da aplicação */
 header {
@@ -7,8 +18,7 @@ header {
     align-items: center;
     box-sizing: border-box;
     padding: 7px;
-    margin-bottom: 2em;
-    background-color: rgb(248, 248, 248);
+    margin-bottom: 2em;    
 }
 
 /* imagem e texto */
@@ -27,5 +37,16 @@ article {
     border: 1px solid black;
     padding: 15px;
     border-radius: 5px;
+    background-color: white;
+    color: black;
 }
 
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+
+.botoes button {
+    margin: 0 0.5em;
+    border-radius: 10px;
+}
