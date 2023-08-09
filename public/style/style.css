@@ -23,15 +23,20 @@ header {
     color: white;
 }
 
-.links a {
-    margin: 0 2em 0 3em;
-}
-
 /* imagem e texto */
 .img {    
     text-align: center;
     font-weight: 600;
     font-size: 18px;
+    margin-right: 5em;
+}
+
+.links {
+    margin-left: 5em;
+}
+
+.links a {
+    margin: 0 2em 0 0;
 }
 
 article {
