@@ -1,9 +1,9 @@
 
 /* regras gerais para todo site */
-* {
-    /* color: white;
-    background-color: rgb(28, 30, 51); */
-}
+/* * {
+    color: white;
+    background-color: rgb(28, 30, 51);
+} */
 
 body {
     /* background-color: rgb(28, 30, 51); */
@@ -40,7 +40,13 @@ header {
 }
 
 article {
-    height: 250px;
+    height: 250px;    
+}
+
+article h6 {
+    text-align: justify;
+    font-size: 1.1em;
+    line-height: 30px;
 }
 
 /* caixa de texto */
