@@ -16,8 +16,7 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-sizing: border-box;
-    padding: 7px;
+    box-sizing: border-box;    
     margin-bottom: 2em;
     background-color: rgb(28, 30, 51);
     color: white;
@@ -27,8 +26,7 @@ header {
 .img {    
     text-align: center;
     font-weight: 600;
-    font-size: 18px;
-    margin-right: 5em;
+    font-size: 18px;    
 }
 
 .links {
@@ -45,7 +43,7 @@ article {
 
 article h6 {
     text-align: justify;
-    font-size: 1.1em;
+    font-size: 1.15em;
     line-height: 30px;
 }
 
