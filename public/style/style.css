@@ -37,14 +37,18 @@ header {
     margin: 0 2em 0 0;
 }
 
+.anuncios {
+
+}
+
 article {
-    height: 250px;    
+    margin-bottom: 2em;
 }
 
 article h6 {
     text-align: justify;
     font-size: 1.15em;
-    line-height: 30px;
+    line-height: 25px;
 }
 
 /* caixa de texto */
@@ -87,4 +91,11 @@ footer span, a {
 
 footer .detalhes {
     text-align: center;
+}
+
+
+/* página: política de privacidade */
+
+.textoPolitica p {
+    font-size: 1.1em;
 }
