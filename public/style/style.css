@@ -9,6 +9,7 @@ body {
     /* background-color: rgb(28, 30, 51); */
     color: black;
     text-align: justify;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .container {
@@ -45,7 +46,7 @@ article {
     margin-bottom: 3em;
 }
 
-article h6 {
+article p {
     text-align: justify;
     font-size: 1.15em;
     line-height: 25px;
