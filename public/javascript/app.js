@@ -1,4 +1,80 @@
 
+
+const textarea = document.querySelector("#textarea");
+const btnGravar = document.querySelector("#btnGravar");
+const btnParar = document.querySelector("#btnParar");
+const btnBaixar = document.querySelector("#btnBaixar");
+const btnLimpar = document.querySelector("#btnLimpar");
+const titulo = document.querySelector("#titulo");
+const copiar = document.querySelector("#btnCopiar");
+
+class speechApi {
+    constructor() {
+        const SpeechToText = window.SpeechRecognition || window.webkitSpeechRecognition;
+        this.speechApi = new SpeechToText()
+        this.output = textarea.output
+        this.speechApi.continuous = true;
+        this.speechApi.lang = 'pt-BR';
+
+        this.speechApi.onresult = e => {
+            var resultIndex = e.resultIndex
+            var transcript = e.results[resultIndex][0].transcript
+
+            textarea.value += transcript
+        }
+    }
+
+    start() {
+        this.speechApi.start()
+    }
+
+    stop() {
+        this.speechApi.stop()
+    }    
+}
+
+var speech = new speechApi()
+
+btnGravar.addEventListener('click', () => {
+    btnGravar.disabled = true;
+    btnParar.disabled = false;
+    speech.start()
+})
+
+btnParar.addEventListener('click', () => {
+    btnGravar.disabled = false;
+    btnParar.disabled = true;
+    speech.stop()
+})
+
+// download
+
+btnBaixar.addEventListener('click', () => {
+    var text = textarea.value
+    var filename = titulo.value + ".txt"
+
+    download(text, filename)
+})
+
+function download(text, filename) {
+    var element = document.createElement('a')
+
+    element.setAttribute('href', 'data:text/plaincharset=utf-8,' + encodeURIComponent(text))
+    element.setAttribute('download', filename)
+    element.style.display = 'none';
+    document.body.appendChild(element)
+    element.click()
+    document.body.removeChild(element)
+}
+
+
+btnLimpar.addEventListener('click', () => {
+    textarea.value = ""
+    btnGravar.disabled = false
+    btnParar.disabled = true
+    speech.stop()
+})
+
 var ongoing = false;
 var recognition = null;
 
@@ -38,20 +114,20 @@ function doStartStopCheck(){
     if(ongoing == true){ // se tiver rodando, vai interromper
         ongoing = false;
         recognition.stop();     
-        document.getElementById('btn_speech').innerHTML = "<i class='fa-solid fa-play'></i>" + " Transcrever Áudio";
+        document.getElementById('btn_speech').innerHTML = "<i class='fa-solid fa-play'></i> <br>" + " Iniciar";
         document.getElementById('btn_speech').style.background = 'green';
     }
     else if (recognition) { // se tiver instância SpeechRecognition, apenas reinicia
         ongoing = true;
         recognition.start();        
-        document.getElementById('btn_speech').innerHTML = "<i class='fa-solid fa-stop'></i>" + " Interromper";
-        document.getElementById('btn_speech').style.background = 'red';
+        document.getElementById('btn_speech').innerHTML = "<i class='fa-solid fa-stop'></i> <br>" + " Interromper";
+        document.getElementById('btn_speech').style.background = 'green';
     }
     else { // se ainda não criou instância, chama a função para inicialização
         console.log("init");
         ongoing = true;
         init();    
-        document.getElementById('btn_speech').innerHTML = "<i class='fa-solid fa-stop'></i>" + " Interromper";
+        document.getElementById('btn_speech').innerHTML = "<i class='fa-solid fa-stop'></i> <br>" + " Interromper";
         document.getElementById('btn_speech').style.background = 'red';
     }
 }

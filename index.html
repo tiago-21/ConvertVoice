@@ -18,28 +18,30 @@
 
     <body>
         <header>
-            <div class="img">
-                <!-- logo e imagem -->
-                <a href="index.html">
-                    <img src="public/style/icons/android-chrome-512x512.png" alt="Logo Convert Voice" width="100">
-                    <span>Convert Voice</span>
-                </a>
-            </div>
+            <nav>
+                <div class="logo">
+                    <!-- logo e imagem -->
+                    <a href="index.html">
+                        <img src="public/style/icons/android-chrome-512x512.png" alt="Logo Convert Voice" width="90">
+                        <span>Convert Voice</span>
+                    </a>
+                </div>
 
-            <div class="links">
-                <a href="../ConvertVoice/public/html/sobre.html">Sobre</a>
-                <a href="../ConvertVoice/public/html/dicasdeuso.html">Dicas de Uso</a>
-                <a href="../ConvertVoice/public/html/politicaprivacidade.html">Política de Privacidade</a>
-            </div>
+                <div class="links">
+                    <a href="../ConvertVoice/public/html/sobre.html">Sobre a ferramenta</a>
+                    <a href="../ConvertVoice/public/html/dicasdeuso.html">Dicas de uso</a>                
+                </div>
+            </nav>
         </header>
 
         <div class="container">
             <div class="anuncios">
+                <!-- anuncios -->
                 
             </div>
 
             <article>
-                <h6>
+                <p>
                     <!-- Transcreva um áudio ou sua voz em textos de maneira rápida e eficaz. <br> -->
                     Tá sem tempo e precisando escrever um texto longo e complexo? Ou precisa escrever muitas informações de uma aula e não quer perder nenhum detalhe?
                     <span>O Convert Voice pode te ajudar!</span>
@@ -47,26 +49,33 @@
                     <!-- Com o Convert Voice, você ganha a capacidade de transformar suas ideias e informações em textos de maneira rápida e eficaz. -->
                     <!-- Experimente agora e descubra como a automação da escrita pode revolucionar a forma como você lida com textos extensos e documentação de informações. -->
                     <!-- Imagine poder criar textos ou frases apenas com sua voz. -->
-                </h6>
+                </p>
             </article>
-        
-            <div class="words"></div> <br>
+
+            <input id="titulo" type="text" class="form-control" id="form-control-plaintext" placeholder="Sobre o que você quer falar">
+            <textarea id="textarea">
+
+            </textarea>
             
             <div class="botoes">
-                <button class="btn btn-success" type="button" id="btn_speech" onclick="doStartStopCheck()">
-                    <i class="fa-solid fa-play"></i> Transcrever Áudio
+                <button id="btnGravar" title="Iniciar" class="btn btn-outline-success" type="button">
+                    <i class="fa-solid fa-play"></i> <br> Iniciar
                 </button>
 
-                <!-- <button class="btn btn-warning" type="button" id="btn_paragrafo" onclick="paragrafo()">
-                    <i class="fa-solid fa-paragraph"></i> Parágrafo
-                </button> -->
-
-                <button class="btn btn-primary" type="button" id="btn_baixar" onclick="baixar()">
-                    <i class="fa-solid fa-file-arrow-down"></i> Baixar texto
+                <button id="btnParar" title="Parar" class="btn btn-outline-warning" type="button">
+                    <i class="fa-solid fa-stop"></i> <br> Parar
                 </button>
 
-                <button class="btn btn-secondary" type="button" id="btn_limpar" onclick="apagar()">
-                    <i class="fa-solid fa-eraser"></i> Apagar texto
+                <button id="btnBaixar" title="Baixar texto" class="btn btn-outline-primary" type="button">
+                    <i class="fa-solid fa-file-arrow-down"></i> <br> Baixar texto
+                </button>
+
+                <button id="btnLimpar" title="Excluir texto" class="btn btn-outline-danger" type="button">
+                    <i class="fa-solid fa-trash"></i> <br> Excluir texto
+                </button>
+
+                <button id="btnCopiar" title="Copiar" class="btn btn-outline-secondary">
+                    <i class="fa-solid fa-copy"></i> <br> Copiar
                 </button>
             </div>
         </div>

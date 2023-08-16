@@ -11,26 +11,26 @@ body {
     text-align: justify;
 }
 
+.container {
+    width: 62%;
+}
+
 /* header da aplicação */
-header {
+
+nav {    
     display: flex;
     justify-content: space-around;
     align-items: center;
-    box-sizing: border-box;    
-    margin-bottom: 2em;
+    box-sizing: border-box;        
     background-color: rgb(28, 30, 51);
     color: white;
 }
 
-/* imagem e texto */
-.img {    
+/* logo e texto */
+.logo span {
     text-align: center;
     font-weight: 600;
-    font-size: 18px;    
-}
-
-.links {
-    margin-left: 5em;
+    font-size: 16px;
 }
 
 .links a {
@@ -38,11 +38,11 @@ header {
 }
 
 .anuncios {
-
+    margin-top: 5em;
 }
 
 article {
-    margin-bottom: 2em;
+    margin-bottom: 3em;
 }
 
 article h6 {
@@ -52,12 +52,25 @@ article h6 {
 }
 
 /* caixa de texto */
-.words {    
-    border: 1px solid black;
-    padding: 15px;
-    border-radius: 5px;
-    background-color: white;
+textarea {
+    width: 100%;
+    height: 200px;
+    margin: 20px auto;
+    border: 2px solid black;
+    outline: 0;    
+    border-radius: 10px;
     color: black;
+    text-align: justify;
+}
+
+textarea::-webkit-scrollbar {
+    width: 12px;
+    background-color: whitesmoke;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: darkgray;
 }
 
 .botoes {
@@ -68,7 +81,13 @@ article h6 {
 .botoes button {
     margin: 0 0.5em;
     border-radius: 10px;
-    color: white;
+    /* color: white; */
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.botoes button:hover {
+    transition: 0.5s;
 }
 
 footer {
@@ -93,9 +112,15 @@ footer .detalhes {
     text-align: center;
 }
 
+/* sobre, dicas e politica */
+.dicas, .sobre, .politica {
+    margin-top: 7em;
+}
 
-/* página: política de privacidade */
-
-.textoPolitica p {
-    font-size: 1.1em;
+/* media queries */
+@media (max-width: 768px) {
+    nav {
+        display: block;
+        text-align: center;
+    }
 }
