@@ -1,5 +1,5 @@
 
-
+// constantes
 const textarea = document.querySelector("#textarea");
 const btnGravar = document.querySelector("#btnGravar");
 const btnParar = document.querySelector("#btnParar");
@@ -8,13 +8,24 @@ const btnLimpar = document.querySelector("#btnLimpar");
 const titulo = document.querySelector("#titulo");
 const copiar = document.querySelector("#btnCopiar");
 
+// verifica se o navegador suporta a Api    
+
+    if(window.SpeechRecognition || window.webkitSpeechRecognition){
+        alert('Seu navegador suporta a ferramenta.');
+    }
+    else {
+        alert('Seu navegador não suporta o uso da ferramenta, tente acessar em outro.');
+    }
+
+// criando classe da Api
 class speechApi {
     constructor() {
         const SpeechToText = window.SpeechRecognition || window.webkitSpeechRecognition;
         this.speechApi = new SpeechToText()
         this.output = textarea.output
-        this.speechApi.continuous = true;
-        this.speechApi.lang = 'pt-BR';
+        this.speechApi.continuous = true
+        this.interimResults = true
+        this.speechApi.lang = 'pt-BR'
 
         this.speechApi.onresult = e => {
             var resultIndex = e.resultIndex
@@ -26,33 +37,46 @@ class speechApi {
 
     start() {
         this.speechApi.start()
+
+        const resultado = document.querySelector("#resultado");
+        resultado.innerHTML = 'O reconhecimento começou!'
+        resultado.style.color = 'green';
+        resultado.style.transition = '0.2s';
     }
 
-    stop() {
+    stop() {        
         this.speechApi.stop()
+        resultado.innerHTML = 'O reconhecimento parou!';
+        resultado.style.color = 'red';
     }    
 }
 
 var speech = new speechApi()
-
+// iniciando o reconhecimento
 btnGravar.addEventListener('click', () => {
     btnGravar.disabled = true;
     btnParar.disabled = false;
     speech.start()
 })
 
+// parando o reconhecimento
 btnParar.addEventListener('click', () => {
     btnGravar.disabled = false;
     btnParar.disabled = true;
     speech.stop()
 })
 
-// download
-
+// download do conteúdo
 btnBaixar.addEventListener('click', () => {
     var text = textarea.value
     var filename = titulo.value + ".txt"
 
+    if(titulo.value != '') {
+        var filename = titulo.value + ".txt"
+    }
+    else {
+        var filename = "convertvoice.txt"
+    }
     download(text, filename)
 })
 
@@ -67,7 +91,7 @@ function download(text, filename) {
     document.body.removeChild(element)
 }
 
-
+// limpeza e exclusão do conteúdo
 btnLimpar.addEventListener('click', () => {
     textarea.value = ""
     btnGravar.disabled = false
