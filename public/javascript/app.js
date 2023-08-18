@@ -124,5 +124,5 @@ copiar.addEventListener('click', () => {
     }, 500);
 })
 
-textarea.style.height = 'auto'
+textarea.style.height = '200px'
 textarea.style.height = textarea.scrollHeight + 'px'

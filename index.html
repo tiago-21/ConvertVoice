@@ -52,7 +52,7 @@
                 <!-- reconhecimento de voz -->
                 <div id="resultado"></div>
 
-                <input id="titulo" type="text" class="form-control" id="form-control-plaintext" placeholder="Sobre o que você vai falar">            
+                <input id="titulo" type="text" class="form-control" id="form-control-plaintext" placeholder="Sobre o que você vai falar. Ex: futebol">
                 <textarea id="textarea"></textarea>
                 
                 <div class="botoes">
@@ -82,14 +82,15 @@
                     <hr>
                     
                     <ol>
-                        <li>Clique no botão Iniciar para dar início a captura de voz ou áudio. O processo de captura não tem fim, ele só é encerrado quando você interromper.</li>
-                        <li>Se desejar parar o processo de captura, clique em Interromper. Se desejar voltar novamente clique em Iniciar.</li>
-                        <li>Se deseja baixar o que foi escrito, basta clicar em Baixar texto. Será realizado o download de um arquivo no formato .txt para sua máquina, contendo o conteúdo do que foi transcrito.</li>
-                        <li>Caso deseje apagar todo conteúdo, clique em Apagar texto.</li>
+                        <li>Clique no botão <span id="text">Iniciar</span> para dar início a captura de voz ou áudio. O processo de captura não tem fim, ele só é encerrado quando você interromper.</li>
+                        <li>Se desejar parar o processo de captura, clique em <span id="text">Parar</span>. Se desejar voltar novamente clique em <span id="text">Iniciar</span>.</li>
+                        <li>Se <span id="text">deseja baixar</span> o que foi escrito, basta clicar em <span id="text">Baixar texto</span>. Será realizado o download de um arquivo no formato .txt para sua máquina, contendo o conteúdo do que foi transcrito.</li>
+                        <li>Caso deseje <span id="text">apagar</span> todo conteúdo, clique em <span id="text">Apagar texto</span>.</li>
                         <li>
                             Enquanto você estiver falando não se preocupe se o texto não aparecer imediatamente, ao final da sua fala todo texto será transcrito na sua tela. <br>
                             Isso porque existe um tempo de resposta e processamento no processo de transcrição.
                         </li>
+                        <li>Você também pode preecher com um título sobre o que você irá transcrever. Basta apenas digitar no campo acima da caixa de texto.</li>
                     </ol>            
                 </div>
 
