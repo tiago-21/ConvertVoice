@@ -39,14 +39,13 @@ class speechApi {
         this.speechApi.start()
 
         const resultado = document.querySelector("#resultado");
-        resultado.innerHTML = 'O reconhecimento começou!'
-        resultado.style.color = 'green';
-        resultado.style.transition = '0.2s';
+        resultado.innerHTML = 'Reconhecimento iniciado!'
+        resultado.style.color = 'green';        
     }
 
     stop() {        
         this.speechApi.stop()
-        resultado.innerHTML = 'O reconhecimento parou!';
+        resultado.innerHTML = 'Reconhecimento parado!';
         resultado.style.color = 'red';
     }    
 }
@@ -155,15 +154,6 @@ function doStartStopCheck(){
         document.getElementById('btn_speech').style.background = 'red';
     }
 }
-
-function rolaScroll(){
-    const w = document.querySelector('.words');
-    w.scrollTop = w.scrollHeight;
-}
-
-setInterval(rolaScroll, 1000);
-
-
 
 
 

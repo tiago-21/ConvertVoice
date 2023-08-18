@@ -17,91 +17,111 @@
     </head>
 
     <body>
-        <header>
-            <nav>
-                <div class="logo">
-                    <!-- logo e imagem -->
-                    <a href="index.html">
-                        <img src="public/style/icons/android-chrome-512x512.png" alt="Logo Convert Voice" width="90">
-                        <span>Convert Voice</span>
-                    </a>
+        <div class="conteiner">
+            <header>
+                <nav>
+                    <div class="logo">
+                        <!-- logo e imagem -->
+                        <a href="index.html">
+                            <img src="public/style/icons/android-chrome-512x512.png" alt="Logo Convert Voice" width="90">
+                            <span>Convert Voice</span>
+                        </a>
+                    </div>
+                </nav>
+            </header>
+
+            <div class="container">
+
+                <div class="anuncios">
+                    <!-- anuncios -->
+                    
                 </div>
 
-                <div class="links">
-                    <a href="../ConvertVoice/public/html/sobre.html">Sobre a ferramenta</a>
-                    <a href="../ConvertVoice/public/html/dicasdeuso.html">Dicas de uso</a>                
-                </div>
-            </nav>
-        </header>
+                <article>
+                    <p>
+                        <!-- Transcreva um áudio ou sua voz em textos de maneira rápida e eficaz. <br> -->
+                        Tá sem tempo e precisando escrever um texto longo e complexo? Ou precisa escrever muitas informações de uma aula e não quer perder nenhum detalhe?
+                        <span>O Convert Voice pode te ajudar!</span>
+                        <br> A ferramenta possibilita que um áudio ou voz seja convertido para texto automaticamente, simplificando sua vida e automatizando o processo de escrita.
+                        <!-- Com o Convert Voice, você ganha a capacidade de transformar suas ideias e informações em textos de maneira rápida e eficaz. -->
+                        <!-- Experimente agora e descubra como a automação da escrita pode revolucionar a forma como você lida com textos extensos e documentação de informações. -->
+                        <!-- Imagine poder criar textos ou frases apenas com sua voz. -->
+                    </p>
+                </article>
 
-        <div class="container">
-            <div class="anuncios">
-                <!-- anuncios -->
+                <!-- reconhecimento de voz -->
+                <div id="resultado"></div>
+
+                <input id="titulo" type="text" class="form-control" id="form-control-plaintext" placeholder="Sobre o que você vai falar">            
+                <textarea id="textarea"></textarea>
                 
+                <div class="botoes">
+                    <button id="btnGravar" title="Iniciar" class="btn btn-success" type="button">
+                        <i class="fa-solid fa-play"></i> Iniciar
+                    </button>
+
+                    <button id="btnParar" title="Parar" class="btn btn-danger" type="button">
+                        <i class="fa-solid fa-stop"></i> Parar
+                    </button>
+
+                    <button id="btnLimpar" title="Excluir texto" class="btn btn-warning" type="button">
+                        <i class="fa-solid fa-trash"></i> Excluir texto
+                    </button>
+
+                    <button id="btnBaixar" title="Baixar texto" class="btn btn-primary" type="button">
+                        <i class="fa-solid fa-file-arrow-down"></i> Baixar texto
+                    </button>                
+
+                    <button id="btnCopiar" title="Copiar" class="btn btn-secondary">
+                        <i class="fa-solid fa-copy"></i> Copiar
+                    </button>
+                </div>
+
+                <div class="dicas">
+                    <h3>Dicas de uso</h3>
+                    <hr>
+                    
+                    <ol>
+                        <li>Clique no botão Iniciar para dar início a captura de voz ou áudio. O processo de captura não tem fim, ele só é encerrado quando você interromper.</li>
+                        <li>Se desejar parar o processo de captura, clique em Interromper. Se desejar voltar novamente clique em Iniciar.</li>
+                        <li>Se deseja baixar o que foi escrito, basta clicar em Baixar texto. Será realizado o download de um arquivo no formato .txt para sua máquina, contendo o conteúdo do que foi transcrito.</li>
+                        <li>Caso deseje apagar todo conteúdo, clique em Apagar texto.</li>
+                        <li>
+                            Enquanto você estiver falando não se preocupe se o texto não aparecer imediatamente, ao final da sua fala todo texto será transcrito na sua tela. <br>
+                            Isso porque existe um tempo de resposta e processamento no processo de transcrição.
+                        </li>
+                    </ol>            
+                </div>
+
+                <div class="politica">
+                    <h3>Política de Privacidade</h3>
+                    <hr>
+
+                    <p>
+                        Na busca incessante por oferecer a você a melhor experiência possível, é nosso compromisso assegurar a máxima proteção às suas informações pessoais. Com total transparência, informamos que nenhuma informação do cliente é armazenada em nossos servidores.                                
+                    </p>
+                    <p>
+                        Valorizamos a sua privacidade e entendemos a importância de manter suas informações confidenciais. Assim, adotamos uma abordagem estrita em relação à não retenção de dados. Isso significa que, no momento em que você utiliza nossa solução para a conversão de áudio em texto, a captura de áudios e vozes é limitada ao seu navegador e dispositivo. Assim que o processo de conversão é concluído, os dados de áudio são prontamente excluídos do ambiente do navegador, sem deixar qualquer rastro nos nossos sistemas ou servidores.
+                    </p>
+                    <p>
+                        Ao escolher nossos serviços, você pode confiar que suas informações estão seguras conosco. Não compartilhamos, vendemos ou divulgamos seus dados pessoais a terceiros. Nossa prioridade é oferecer uma experiência que seja não apenas eficaz, mas também completamente confidencial.  Salientamos, ainda, que a proteção das suas informações é um compromisso constante. Atualizamos nossos protocolos de segurança regularmente, garantindo que as mais recentes medidas de proteção estejam sempre em vigor.
+                    </p>
+                    <p>
+                        Nossa política de privacidade se alinha aos mais altos padrões éticos e regulatórios. Estamos aqui para oferecer um serviço confiável, sem comprometer a segurança dos seus dados. Seja qual for a sua necessidade, saiba que estamos dedicados a manter a integridade das suas informações e proporcionar a tranquilidade que você merece.
+                    </p>
+                </div>
             </div>
 
-            <article>
-                <p>
-                    <!-- Transcreva um áudio ou sua voz em textos de maneira rápida e eficaz. <br> -->
-                    Tá sem tempo e precisando escrever um texto longo e complexo? Ou precisa escrever muitas informações de uma aula e não quer perder nenhum detalhe?
-                    <span>O Convert Voice pode te ajudar!</span>
-                    <br> A ferramenta possibilita que um áudio ou voz seja convertido para texto automaticamente, simplificando sua vida e automatizando o processo de escrita.
-                    <!-- Com o Convert Voice, você ganha a capacidade de transformar suas ideias e informações em textos de maneira rápida e eficaz. -->
-                    <!-- Experimente agora e descubra como a automação da escrita pode revolucionar a forma como você lida com textos extensos e documentação de informações. -->
-                    <!-- Imagine poder criar textos ou frases apenas com sua voz. -->
-                </p>
-            </article>
-
-            <!-- reconhecimento de voz -->
-            <div id="resultado"></div>
-
-            <input id="titulo" type="text" class="form-control" id="form-control-plaintext" placeholder="Sobre o que você vai falar">            
-            <textarea id="textarea"></textarea>
+            <footer>
+                <div class="copy">
+                    <span> 
+                        Copyright &copy; 2023 - Convert Voice <br>
+                        Desenvolvido por <a href="https://www.linkedin.com/in/tiago-rodrigues01/" target="_blank"> Tiago Rodrigues</a>
+                    </span>
+                </div>                    
+            </footer>
             
-            <div class="botoes">
-                <button id="btnGravar" title="Iniciar" class="btn btn-success" type="button">
-                    <i class="fa-solid fa-play"></i> <br> Iniciar
-                </button>
-
-                <button id="btnParar" title="Parar" class="btn btn-warning" type="button">
-                    <i class="fa-solid fa-stop"></i> <br> Parar
-                </button>
-
-                <button id="btnLimpar" title="Excluir texto" class="btn btn-danger" type="button">
-                    <i class="fa-solid fa-trash"></i> <br> Excluir texto
-                </button>
-
-                <button id="btnBaixar" title="Baixar texto" class="btn btn-primary" type="button">
-                    <i class="fa-solid fa-file-arrow-down"></i> <br> Baixar texto
-                </button>                
-
-                <button id="btnCopiar" title="Copiar" class="btn btn-secondary">
-                    <i class="fa-solid fa-copy"></i> <br> Copiar
-                </button>
-            </div>
         </div>
-
-        <footer>
-            <div class="copy">
-                <span> 
-                    Copyright &copy; 2023 - Desenvolvido por <a href="https://www.linkedin.com/in/tiago-rodrigues01/" target="_blank"> Tiago Rodrigues</a>
-                </span>
-            </div>
-
-            <div class="detalhes">
-                <span>
-                    <a href="../ConvertVoice/public/html/sobre.html">Sobre</a> |
-                </span>
-
-                <span>
-                    <a href="../ConvertVoice/public/html/dicasdeuso.html">Dicas de uso</a> |
-                </span>
-
-                <span>
-                    <a href="../ConvertVoice/public/html/politicaprivacidade.html">Política de Privacidade</a>
-                </span>
-            </div>
-        </footer>
     </body>
 
     <script src="public/javascript/app.js"></script>
