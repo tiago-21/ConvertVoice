@@ -1,4 +1,3 @@
-
 // constantes
 const textarea = document.querySelector("#textarea");
 const btnGravar = document.querySelector("#btnGravar");
@@ -8,19 +7,20 @@ const btnLimpar = document.querySelector("#btnLimpar");
 const titulo = document.querySelector("#titulo");
 const copiar = document.querySelector("#btnCopiar");
 
-// verifica se o navegador suporta a Api    
+// verifica se o navegador tem compatibilidade e suporta a Api
+const suporte = window.SpeechRecognition || window.webkitSpeechRecognition
 
-    if(window.SpeechRecognition || window.webkitSpeechRecognition){
-        alert('Seu navegador suporta a ferramenta.');
+    if(suporte){
+        // ok. Irá executar a aplicação
     }
     else {
-        alert('Seu navegador não suporta o uso da ferramenta, tente acessar em outro.');
+        alert('Seu navegador não tem suporte para uso da ferramenta, por gentileza tente acessar em outro.');
     }
 
 // criando classe da Api
 class speechApi {
     constructor() {
-        const SpeechToText = window.SpeechRecognition || window.webkitSpeechRecognition;
+        const SpeechToText = suporte
         this.speechApi = new SpeechToText()
         this.output = textarea.output
         this.speechApi.continuous = true
@@ -37,26 +37,35 @@ class speechApi {
 
     start() {
         this.speechApi.start()
-
         const resultado = document.querySelector("#resultado");
+
         resultado.innerHTML = 'Reconhecimento iniciado!'
-        resultado.style.color = 'green';        
+        resultado.style.textAlign = 'center'
+        resultado.style.marginBottom = '20px'
+        resultado.style.color = 'green';
+        resultado.style.fontWeight = 'bold'                        
     }
 
     stop() {        
         this.speechApi.stop()
-        resultado.innerHTML = 'Reconhecimento parado!';
+        resultado.innerHTML = 'Reconhecimento encerrado!';
         resultado.style.color = 'red';
-    }    
+
+        setTimeout(() => {                        
+            resultado.textContent = ''
+        }, 1200);
+    }
 }
 
-var speech = new speechApi()
+
 // iniciando o reconhecimento
+var speech = new speechApi()
 btnGravar.addEventListener('click', () => {
     btnGravar.disabled = true;
     btnParar.disabled = false;
     speech.start()
 })
+
 
 // parando o reconhecimento
 btnParar.addEventListener('click', () => {
@@ -64,6 +73,7 @@ btnParar.addEventListener('click', () => {
     btnParar.disabled = true;
     speech.stop()
 })
+
 
 // download do conteúdo
 btnBaixar.addEventListener('click', () => {
@@ -90,71 +100,29 @@ function download(text, filename) {
     document.body.removeChild(element)
 }
 
+
 // limpeza e exclusão do conteúdo
 btnLimpar.addEventListener('click', () => {
     textarea.value = ""
     btnGravar.disabled = false
-    btnParar.disabled = true
-    speech.stop()
+    // btnParar.disabled = true
+    // speech.stop()
 })
 
-var ongoing = false;
-var recognition = null;
 
-function verificaStatus(){
-    if (ongoing == true){
-        recognition.start();
-    }
-}
+// copiar texto
+copiar.addEventListener('click', () => {
+    let texto = document.querySelector("#textarea")
+    texto.select()
+    texto.setSelectionRange(0, 99999)
+    document.execCommand("copy")
 
-function init(){
-    window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    recognition = new SpeechRecognition();
-    recognition.interimResults = true;
-    recognition.lang = 'pt-BR';
+    copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiado'
 
-    var p = document.createElement('span');
-    const words = document.querySelector('.words');
-    words.appendChild(p);
+    setTimeout(() => {
+        copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar'
+    }, 500);
+})
 
-    recognition.addEventListener('result', e => {
-        const transcript = Array.from(e.results)
-        .map(result => result[0])
-        .map(result => result.transcript)
-        .join('');
-    
-        p.textContent = transcript + ", ";
-        if (e.results[0].isFinal) {
-            p = document.createElement('span');
-            words.appendChild(p);       
-        }
-        });
-    recognition.addEventListener('end', verificaStatus);
-    recognition.start();
-}
-
-function doStartStopCheck(){
-    if(ongoing == true){ // se tiver rodando, vai interromper
-        ongoing = false;
-        recognition.stop();     
-        document.getElementById('btn_speech').innerHTML = "<i class='fa-solid fa-play'></i> <br>" + " Iniciar";
-        document.getElementById('btn_speech').style.background = 'green';
-    }
-    else if (recognition) { // se tiver instância SpeechRecognition, apenas reinicia
-        ongoing = true;
-        recognition.start();        
-        document.getElementById('btn_speech').innerHTML = "<i class='fa-solid fa-stop'></i> <br>" + " Interromper";
-        document.getElementById('btn_speech').style.background = 'green';
-    }
-    else { // se ainda não criou instância, chama a função para inicialização
-        console.log("init");
-        ongoing = true;
-        init();    
-        document.getElementById('btn_speech').innerHTML = "<i class='fa-solid fa-stop'></i> <br>" + " Interromper";
-        document.getElementById('btn_speech').style.background = 'red';
-    }
-}
-
-
-
-
+textarea.style.height = 'auto'
+textarea.style.height = textarea.scrollHeight + 'px'
