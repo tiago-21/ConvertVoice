@@ -1,9 +1,13 @@
 
 body {
     /* background-color: rgb(28, 30, 51); */
-    color: black;
+    color: white;
     text-align: justify;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.conteiner {
+    background-color: rgb(19, 20, 34);
 }
 
 .container {
@@ -16,20 +20,26 @@ nav {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;        
-    background-color: rgb(28, 30, 51);
+    background-color: rgb(11, 12, 20);
     color: white;
+    padding: 20px;
+}
+    
+.logo img {
+    display: block;
+    margin: 0 auto 0 auto;
+    padding: 0;
 }
 
-/* logo e texto */
 .logo span {
     text-align: center;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 18px;    
 }
 
-.anuncios {
+/* .anuncios {
     margin-top: 5em;
-}
+} */
 
 article {
     margin-bottom: 3em;
@@ -37,21 +47,30 @@ article {
 
 article p {
     text-align: justify;
-    font-size: 1.4em;
-    line-height: 30px;
-    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#titulo {
+    background-color: rgb(214, 214, 214);
+    color: black;
+    font-weight: bolder;
+    border: none;
 }
 
 /* caixa de texto */
 textarea {
     width: 100%;    
-    margin: 20px auto;
-    border: 2px solid black;
+    margin: 20px auto 0 auto;
     outline: 0;    
     border-radius: 10px;
+    border: none;
     color: black;
     text-align: justify;
     padding: 10px;    
+    font-size: 18px;
+    resize: none;
+    font-weight: 500;
+    background-color: rgb(214, 214, 214);    
 }
 
 textarea::-webkit-scrollbar {
@@ -69,16 +88,47 @@ textarea::-webkit-scrollbar-thumb {
     justify-content: center;
 }
 
-.botoes button {
-    margin: 0 0.5em;
+button {
+    margin: 0 0.3em 0 0.3em;
+    background-color: transparent;
+    border: none;
     border-radius: 10px;
     color: white;
     font-size: 15px;
     font-weight: 600;
 }
 
-.botoes button:hover {
-    transition: 0.5s;
+.botoes-add {
+    display: flex;
+    justify-content: flex-end;    
+}
+
+.botoes-add button {
+    margin: 0 5px 0 10px;
+    font-size: 16px;
+}
+
+.gravar:hover, .parar:hover, .pausar:hover {
+    background-color:rgba(165, 165, 165, 0.1);
+    transition: 0.3s linear;
+}
+.parar, .pausar {
+    font-size: 2em;
+    padding: 5px;
+}
+
+.gravar i {
+    color: #0de109;
+    font-size: 3em;
+    padding: 5px;
+}
+
+.parar i {
+    color: #fb0e26;    
+}
+
+.pausar i {
+    color: #ff9d14;
 }
 
 footer {
@@ -87,7 +137,7 @@ footer {
     text-align: center;
     grid-template-columns: auto;
     grid-template-rows: auto auto;
-    background-color: rgb(28, 30, 51);    
+    background-color: rgb(11, 12, 20);
     padding: 12px;
     box-sizing: border-box;    
     width: 100%;
@@ -101,6 +151,7 @@ footer span, a {
 /* sobre, dicas e politica */
 .dicas, .politica {
     margin-top: 4em;
+    text-align: justify;
 }
 
 #text {

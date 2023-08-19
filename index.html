@@ -19,70 +19,79 @@
     <body>
         <div class="conteiner">
             <header>
-                <nav>
-                    <!-- logo -->
+                <nav>                    
                     <div class="logo">                        
                         <a href="index.html">
-                            <img src="public/style/icons/android-chrome-512x512.png" alt="Logo Convert Voice" width="90">
+                            <img src="public/style/icons/android-chrome-512x5121.png" alt="Logo Convert Voice" width="90">
                             <span>Convert Voice</span>
                         </a>
                     </div>
                 </nav>
             </header>
 
-            <div class="container">
-
-                <div class="anuncios">
-                    <!-- anuncios -->
-                    
-                </div>
+            <div class="container">                
 
                 <article>
                     <p>
+                        Converta áudios e voz para texto, de maneira simples e prática!                        
                         <!-- Transcreva um áudio ou sua voz em textos de maneira rápida e eficaz. <br> -->
-                        Tá sem tempo e precisando escrever um texto longo e complexo? Ou precisa escrever muitas informações de uma aula e não quer perder nenhum detalhe?
-                        <span>O Convert Voice pode te ajudar!</span> <br>
-                        <br> A ferramenta possibilita que a voz ou até um áudio seja convertido para texto automaticamente, simplificando sua vida e automatizando a sua escrita.
+                        <!-- Tá sem tempo e precisando escrever um texto longo e complexo? Ou precisa escrever muitas informações de uma aula e não quer perder nenhum detalhe? -->
+                        <!-- O Convert Voice pode te ajudar! <br> -->
+                        <!-- <br> A ferramenta possibilita que a voz ou até um áudio seja convertido para texto automaticamente, simplificando sua vida e automatizando a sua escrita. -->
                         <!-- Com o Convert Voice, você ganha a capacidade de transformar suas ideias e informações em textos de maneira rápida e eficaz. -->
                         <!-- Experimente agora e descubra como a automação da escrita pode revolucionar a forma como você lida com textos extensos e documentação de informações. -->
                         <!-- Imagine poder criar textos ou frases apenas com sua voz. -->
                     </p>
                 </article>
+
+                <div class="anuncios">
+                    <!-- anuncios -->
+                    
+                </div>
                 
                 <!-- reconhecimento de voz -->
                 <div id="resultado"></div>
-
-                <input id="titulo" type="text" class="form-control" id="form-control-plaintext" placeholder="Sobre o que você vai falar. Ex: futebol">
+                
+                <input id="titulo" type="text" class="form-control" placeholder="Sobre o que você vai falar. Ex: futebol">                
                 <textarea id="textarea"></textarea>
                 
-                <div class="botoes">
-                    <button id="btnGravar" title="Iniciar" class="btn btn-success" type="button">
-                        <i class="fa-solid fa-play"></i> Iniciar
+                <div class="botoes-add">
+                    <button id="btnLimpar" title="Limpar texto" type="button" class="limpar">
+                        <i class="fa-solid fa-trash"></i>
                     </button>
 
-                    <button id="btnParar" title="Parar" class="btn btn-danger" type="button">
-                        <i class="fa-solid fa-stop"></i> Parar
-                    </button>
-
-                    <button id="btnLimpar" title="Excluir texto" class="btn btn-warning" type="button">
-                        <i class="fa-solid fa-trash"></i> Excluir texto
-                    </button>
-
-                    <button id="btnBaixar" title="Baixar texto" class="btn btn-primary" type="button">
-                        <i class="fa-solid fa-file-arrow-down"></i> Baixar texto
+                    <button id="btnBaixar" title="Baixar texto" type="button" class="baixar">
+                        <i class="fa-solid fa-file-arrow-down"></i>
                     </button>                
 
-                    <button id="btnCopiar" title="Copiar" class="btn btn-secondary">
-                        <i class="fa-solid fa-copy"></i> Copiar
-                    </button>
+                    <button id="btnCopiar" title="Copiar" type="button" class="copiar">
+                        <i class="fa-solid fa-copy"></i>
+                    </button>                    
                 </div>
+
+                <div class="botoes">
+                    <button id="btnPausar" title="Pausar" type="button" class="pausar">
+                        <i class="fa-solid fa-pause"></i>
+                    </button>
+
+                    <button id="btnGravar" title="Iniciar" type="button" class="gravar">
+                        <i class="fa-solid fa-microphone"></i>
+                    </button>
+
+                    <button id="btnParar" title="Parar" type="button" class="parar">
+                        <i class="fa-regular fa-circle-stop"></i>
+                    </button>                    
+                </div>                
+
+                <div class="sobre"></div>
 
                 <div class="dicas">
                     <h3>Dicas de uso</h3>
                     <hr>
                     
-                    <ol>
+                    <ol>                        
                         <li>Clique no botão <span id="text">Iniciar</span> para dar início a captura de voz ou áudio. O processo de captura não tem fim, ele só é encerrado quando você interromper.</li>
+                        <li>Logo em seguida, aceite a permissão do navegador para usar o microfone, clique em <span id="text">Permitir</span>. </li>
                         <li>Se desejar parar o processo de captura, clique em <span id="text">Parar</span>. Se desejar voltar novamente clique em <span id="text">Iniciar</span>.</li>
                         <li>Se <span id="text">deseja baixar</span> o que foi escrito, basta clicar em <span id="text">Baixar texto</span>. Será realizado o download de um arquivo no formato .txt para sua máquina, contendo o conteúdo do que foi transcrito.</li>
                         <li>Caso deseje <span id="text">apagar</span> todo conteúdo, clique em <span id="text">Apagar texto</span>.</li>

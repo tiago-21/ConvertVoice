@@ -114,14 +114,14 @@ btnLimpar.addEventListener('click', () => {
 copiar.addEventListener('click', () => {
     let texto = document.querySelector("#textarea")
     texto.select()
-    texto.setSelectionRange(0, 99999)
+    texto.setSelectionRange(0, 99999999)
     document.execCommand("copy")
 
-    copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiado'
+    // copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiado'
 
-    setTimeout(() => {
-        copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar'
-    }, 500);
+    // setTimeout(() => {
+    //     copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar'
+    // }, 500);
 })
 
 textarea.style.height = '200px'
