@@ -71,6 +71,7 @@ textarea {
     resize: none;
     font-weight: 500;
     background-color: rgb(214, 214, 214);    
+    height: 200px;
 }
 
 textarea::-webkit-scrollbar {
@@ -108,28 +109,23 @@ button {
     font-size: 16px;
 }
 
-.gravar:hover, .parar:hover, .pausar:hover {
+.gravar:hover, .parar:hover {
     background-color:rgba(165, 165, 165, 0.1);
     transition: 0.3s linear;
 }
-.parar, .pausar {
-    font-size: 2em;
+.parar, .gravar {
+    font-size: 3em;
     padding: 5px;
 }
 
 .gravar i {
     color: #0de109;
-    font-size: 3em;
-    padding: 5px;
 }
 
 .parar i {
     color: #fb0e26;    
 }
 
-.pausar i {
-    color: #ff9d14;
-}
 
 footer {
     display: grid;
