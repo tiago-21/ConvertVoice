@@ -61,7 +61,7 @@ article p {
 textarea {
     width: 100%;    
     margin: 20px auto 0 auto;
-    outline: 0;    
+    outline: 0; 
     border-radius: 10px;
     border: none;
     color: black;

@@ -5,7 +5,6 @@ const btnParar = document.querySelector("#btnParar");
 const btnBaixar = document.querySelector("#btnBaixar");
 const btnLimpar = document.querySelector("#btnLimpar");
 const titulo = document.querySelector("#titulo");
-const pausar = document.querySelector("#btnPausar");
 const copiar = document.querySelector("#btnCopiar");
 
 // verifica se o navegador tem compatibilidade e suporta a Api
@@ -57,12 +56,6 @@ class speechApi {
         }, 1200);
     }
 }
-
-// pausa
-pausar.addEventListener('click', () =>  {
-    speech.pause();   
-
-})
 
 
 // iniciando o reconhecimento
@@ -121,7 +114,7 @@ btnLimpar.addEventListener('click', () => {
 copiar.addEventListener('click', () => {
     let texto = document.querySelector("#textarea")
     texto.select()
-    texto.setSelectionRange(0, 99999999)
+    texto.setSelectionRange(0, 99999)
     document.execCommand("copy")
 
     // copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiado'
@@ -131,4 +124,5 @@ copiar.addEventListener('click', () => {
     // }, 500);
 })
 
+textarea.style.height = '200px'
 textarea.style.height = textarea.scrollHeight + 'px'
