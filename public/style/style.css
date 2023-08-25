@@ -22,7 +22,7 @@ nav {
     box-sizing: border-box;        
     background-color: rgb(11, 12, 20);
     color: white;
-    padding: 20px;
+    padding: 10px;
 }
     
 .logo img {
@@ -51,7 +51,7 @@ article p {
 }
 
 #titulo {
-    background-color: rgb(214, 214, 214);
+    /* background-color: rgb(214, 214, 214); */
     color: black;
     font-weight: bolder;
     border: none;
@@ -70,7 +70,7 @@ textarea {
     font-size: 18px;
     resize: none;
     font-weight: 500;
-    background-color: rgb(214, 214, 214);    
+    /* background-color: rgb(214, 214, 214);     */
     height: 200px;
 }
 
@@ -84,13 +84,8 @@ textarea::-webkit-scrollbar-thumb {
     background-color: darkgray;
 }
 
-.botoes {
-    display: flex;
-    justify-content: center;
-}
-
 button {
-    margin: 0 0.3em 0 0.3em;
+    /* margin: 0 0.3em 0 0.3em; */
     background-color: transparent;
     border: none;
     border-radius: 10px;
@@ -99,33 +94,59 @@ button {
     font-weight: 600;
 }
 
+.botoes {
+    display: flex;
+    justify-content: center;
+}
+
+.botoes button, .botoes-add button {
+    margin: 10px 0 0 14px;
+}
+
 .botoes-add {
     display: flex;
     justify-content: flex-end;    
 }
 
-.botoes-add button {
-    margin: 0 5px 0 10px;
-    font-size: 16px;
+.botoes-add i {
+    padding: 5px;
 }
 
-.gravar:hover, .parar:hover {
-    background-color:rgba(165, 165, 165, 0.1);
+#btnGravar:hover {
+    background-color:rgb(72, 214, 96);
     transition: 0.3s linear;
 }
-.parar, .gravar {
-    font-size: 3em;
-    padding: 5px;
+
+#btnParar:hover {
+    background-color:rgb(255, 105, 105);
+    transition: 0.3s linear;
 }
 
 .gravar i {
     color: #0de109;
+    padding: 5px;
+    font-size: 2.5em;
 }
 
 .parar i {
-    color: #fb0e26;    
+    color: #fb0e26;
+    padding: 5px;
+    font-size: 2.5em;   
 }
 
+/* sobre, dicas e politica */
+.instrucoes, .sobre, .politica {
+    margin-top: 4em;
+    text-align: justify;
+}
+
+.politica {
+    margin-bottom: 4em;
+}
+
+#text {
+    font-weight: bold;
+}
 
 footer {
     display: grid;
@@ -144,23 +165,8 @@ footer span, a {
     color: white;
 }
 
-/* sobre, dicas e politica */
-.dicas, .politica {
-    margin-top: 4em;
-    text-align: justify;
-}
-
-#text {
-    font-weight: bold;
-}
-
-
-.politica {
-    margin-bottom: 4em;
-}
-
 /* media queries */
-@media (max-width: 781px) {
+/* @media (max-width: 781px) {
     .botoes {
         display: flex;               
         align-content: center;
@@ -180,4 +186,4 @@ footer span, a {
     .botoes button {
         margin-top: 0.5em;
     }
-}
+} */

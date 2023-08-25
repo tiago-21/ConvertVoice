@@ -53,53 +53,73 @@
                 
                 <input id="titulo" type="text" class="form-control" placeholder="Sobre o que você vai falar. Ex: futebol">                
                 <textarea id="textarea"></textarea>
-                
+
                 <div class="botoes-add">
-                    <button id="btnLimpar" title="Limpar texto" type="button" class="limpar">
-                        <i class="fa-solid fa-trash"></i>
+                    <button id="btnCopiar" title="Copiar" type="button" class="btn btn-light btn-sm">
+                        <i class="fa-solid fa-copy"></i> <span>Copiar</span>
                     </button>
 
-                    <button id="btnBaixar" title="Baixar texto" type="button" class="baixar">
-                        <i class="fa-solid fa-file-arrow-down"></i>
-                    </button>                
+                    <button id="btnLimpar" title="Limpar texto" type="button" class="btn btn-secondary btn-sm">
+                        <i class="fa-solid fa-trash"></i> <span>Limpar</span>
+                    </button>
 
-                    <button id="btnCopiar" title="Copiar" type="button" class="copiar">
-                        <i class="fa-solid fa-copy"></i>
+                    <button id="btnBaixar" title="Baixar texto" type="button" class="btn btn-primary btn-sm">
+                        <i class="fa-solid fa-file-arrow-down"></i> <span>Baixar</span>
+                    </button>                    
+                </div>                                    
+                
+                <div class="botoes">
+                    <button id="btnGravar" title="Iniciar" type="button" class="btn btn-success">
+                        <i class="fa-solid fa-microphone"></i> <span>Iniciar</span>
+                    </button>
+
+                    <button id="btnParar" title="Parar" type="button" class="btn btn-danger">
+                        <i class="fa-regular fa-circle-stop"></i> <span>Parar</span>
                     </button>                    
                 </div>
 
-                <div class="botoes">                    
-                    <button id="btnGravar" title="Iniciar" type="button" class="gravar">
-                        <i class="fa-solid fa-microphone"></i>
-                    </button>
-
-                    <button id="btnParar" title="Parar" type="button" class="parar">
-                        <i class="fa-regular fa-circle-stop"></i>
-                    </button>                    
-                </div>                
-
-                <div class="sobre"></div>
-
-                <div class="dicas">
-                    <h3>Dicas de uso</h3>
+                <div class="instrucoes">
+                    <h3> <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i> Dicas de uso</h3>
                     <hr>
                     
+                    <h5>Principais</h5>
                     <ol>                        
                         <li>Clique no botão <span id="text">Iniciar</span> para dar início a captura de voz ou áudio. O processo de captura não tem fim, ele só é encerrado quando você interromper.</li>
                         <li>Logo em seguida, aceite a permissão do navegador para usar o microfone, clique em <span id="text">Permitir</span>. </li>
                         <li>Se desejar parar o processo de captura, clique em <span id="text">Parar</span>. Se desejar voltar novamente clique em <span id="text">Iniciar</span>.</li>
-                        <li>Se <span id="text">deseja baixar</span> o que foi escrito, basta clicar em <span id="text">Baixar texto</span>. Será realizado o download de um arquivo no formato .txt para sua máquina, contendo o conteúdo do que foi transcrito.</li>
-                        <li>Caso deseje <span id="text">apagar</span> todo conteúdo, clique em <span id="text">Apagar texto</span>.</li>
+                        <li>Caso deseje <span id="text">apagar</span> todo conteúdo, clique em <span id="text">Limpar</span>.</li>
+                        <li>Se <span id="text">deseja baixar</span> o que foi escrito, basta clicar em <span id="text">Baixar</span>. Será realizado o download de um arquivo no formato .txt para sua máquina, contendo o conteúdo do que foi transcrito.</li>
                         <li>
                             Enquanto você estiver falando não se preocupe se o texto não aparecer imediatamente, ao final da sua fala todo texto será transcrito na sua tela. <br>
                             Isso porque existe um tempo de resposta e processamento no processo de transcrição.
-                        </li>
-                        <li>Você também pode preecher com um título sobre o que você irá transcrever. Basta apenas digitar no campo acima da caixa de texto.</li>
-                    </ol>            
+                        </li>                        
+                    </ol>
+
+                    <h5>Outras dicas</h5>
+                    <ul>                        
+                        <li>Você também pode preencher com um título sobre o que você irá transcrever. Basta apenas digitar no campo acima da caixa de texto.</li>
+                        <li>Caso você queira corrigir ou adicionar uma nova palavra dentro da caixa de texto, basta clicar nela e digitar.</li>
+                    </ul>
+                </div>
+
+                <div class="sobre">
+                    <h3><i class="fa-solid fa-screwdriver-wrench"></i> Sobre a ferramenta</h3>
+                    <hr>
+
+                    <p>
+                        A ideia da ferramenta é automatizar a escrita, tornando o processo mais rapido utilizando a fala/áudio.                        
+                    </p>                    
+                    <p>Para que usar a ferramenta?</p>
+                    <ul>
+                        <li>Transcrever informações de um artigo;</li>
+                        <li>Documentar informações de uma aula com mais detalhes;</li>
+                        <li>Colocar suas ideias em forma escrita;</li>
+                        <li>E tudo mais que você puder fazer, use a criatividade :)</li>
+                    </ul>
                 </div>
 
                 <div class="politica">
-                    <h3>Política de Privacidade</h3>
+                    <h3> <i class="fa-solid fa-lock" style="color: #ffffff;"></i> Política de Privacidade</h3>
                     <hr>
 
                     <p>
@@ -120,10 +140,10 @@
             <footer>
                 <div class="copy">
                     <span> 
-                        Copyright &copy; 2023 - Convert Voice <br>
+                        Copyright &copy; 2023 - Convert Voice - Todos os direitos reservados<br>
                         Desenvolvido por <a href="https://www.linkedin.com/in/tiago-rodrigues01/" target="_blank"> Tiago Rodrigues</a>
                     </span>
-                </div>                    
+                </div>
             </footer>
             
         </div>

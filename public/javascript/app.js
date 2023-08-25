@@ -6,6 +6,7 @@ const btnBaixar = document.querySelector("#btnBaixar");
 const btnLimpar = document.querySelector("#btnLimpar");
 const titulo = document.querySelector("#titulo");
 const copiar = document.querySelector("#btnCopiar");
+btnParar.disabled = true;
 
 // verifica se o navegador tem compatibilidade e suporta a Api
 const suporte = window.SpeechRecognition || window.webkitSpeechRecognition
@@ -49,14 +50,16 @@ class speechApi {
     stop() {        
         this.speechApi.stop()
         resultado.innerHTML = 'Reconhecimento encerrado!';
-        resultado.style.color = 'red';
+        resultado.style.textAlign = 'center'
+        resultado.style.marginBottom = '20px'
+        resultado.style.color = 'red'
+        resultado.style.fontWeight = 'bold'
 
         setTimeout(() => {                        
             resultado.textContent = ''
         }, 1200);
     }
 }
-
 
 // iniciando o reconhecimento
 var speech = new speechApi()
@@ -78,15 +81,20 @@ btnParar.addEventListener('click', () => {
 // download do conteúdo
 btnBaixar.addEventListener('click', () => {
     var text = textarea.value
-    var filename = titulo.value + ".txt"
 
-    if(titulo.value != '') {
+    if(textarea.value != '' && titulo.value == '') {
+        var filename = "convertvoice.txt"        
+        download(text, filename)
+    }
+
+    else if(textarea.value != '' && titulo.value != '') {
         var filename = titulo.value + ".txt"
+        download(text, filename)
     }
+
     else {
-        var filename = "convertvoice.txt"
+        alert("Preencha com conteúdo para baixar!")
     }
-    download(text, filename)
 })
 
 function download(text, filename) {
@@ -103,8 +111,13 @@ function download(text, filename) {
 
 // limpeza e exclusão do conteúdo
 btnLimpar.addEventListener('click', () => {
-    textarea.value = ""
-    btnGravar.disabled = false
+    if(textarea.value != '') {
+        textarea.value = ""
+        btnGravar.disabled = false
+    }
+    else {
+        alert("O conteúdo está vazio!");
+    }
     // btnParar.disabled = true
     // speech.stop()
 })
@@ -112,16 +125,21 @@ btnLimpar.addEventListener('click', () => {
 
 // copiar texto
 copiar.addEventListener('click', () => {
-    let texto = document.querySelector("#textarea")
-    texto.select()
-    texto.setSelectionRange(0, 99999)
-    document.execCommand("copy")
+    if(textarea.value != '') {
+        let texto = document.querySelector("#textarea")
+        texto.select()
+        texto.setSelectionRange(0, 99999)
+        document.execCommand("copy")
 
-    // copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiado'
+        copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiado'
 
-    // setTimeout(() => {
-    //     copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar'
-    // }, 500);
+        setTimeout(() => {
+            copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar'
+        }, 900);
+    }
+    else {
+        alert("Nenhum conteúdo para copiar!")
+    }    
 })
 
 textarea.style.height = '200px'
