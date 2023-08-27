@@ -84,31 +84,24 @@ textarea::-webkit-scrollbar-thumb {
     background-color: darkgray;
 }
 
-button {
-    /* margin: 0 0.3em 0 0.3em; */
-    background-color: transparent;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
-}
-
 .botoes {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    column-gap: 10px;
+    margin-top: 5px;
 }
 
-.botoes button, .botoes-add button {
-    margin: 10px 0 0 14px;
+.botoes button {    
+    margin: 10px 5px 0 5px;
+    color: white;
+    text-align: center;
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    font-weight: 600;    
 }
 
-.botoes-add {
-    display: flex;
-    justify-content: flex-end;    
-}
-
-.botoes-add i {
+.botoes i {
     padding: 5px;
 }
 
@@ -124,14 +117,12 @@ button {
 
 .gravar i {
     color: #0de109;
-    padding: 5px;
-    font-size: 2.5em;
+    padding: 5px;    
 }
 
 .parar i {
     color: #fb0e26;
-    padding: 5px;
-    font-size: 2.5em;   
+    padding: 5px;    
 }
 
 /* sobre, dicas e politica */
@@ -166,24 +157,33 @@ footer span, a {
 }
 
 /* media queries */
-/* @media (max-width: 781px) {
-    .botoes {
-        display: flex;               
-        align-content: center;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto auto;
+@media (max-width: 781px) {
+    nav {
+        height: 50px;
+        padding: 35px;
     }
+
+    .logo img {
+        width: 50px;
+    }
+
+    .logo span {
+        font-size: 14px;
+    }
+
+    .botoes-add {
+        display: flex;
+        justify-content: center;
+    }
+
     .botoes button {
-        margin-top: 0.5em;
+        margin: 10px 5px 0 5px;
+        color: white;
+        text-align: center;
+        border-radius: 5px;
+        border: none;
+        font-size: 15px;
+        font-weight: 600;
+        width: 100%;    
     }
 }
-
-@media (max-width: 481px) {
-    .botoes {
-        display: grid;
-        grid-template-columns: auto auto;
-    }
-    .botoes button {
-        margin-top: 0.5em;
-    }
-} */

@@ -6,6 +6,7 @@ const btnBaixar = document.querySelector("#btnBaixar");
 const btnLimpar = document.querySelector("#btnLimpar");
 const titulo = document.querySelector("#titulo");
 const copiar = document.querySelector("#btnCopiar");
+const atualizar = document.querySelector('#btnAtualizar');
 btnParar.disabled = true;
 
 // verifica se o navegador tem compatibilidade e suporta a Api
@@ -142,5 +143,23 @@ copiar.addEventListener('click', () => {
     }    
 })
 
+atualizar.addEventListener('click', () => {
+    window.location.reload();
+})
+
 textarea.style.height = '200px'
 textarea.style.height = textarea.scrollHeight + 'px'
+
+// btnGravar.addEventListener('mouseover', passaMouse);
+// btnGravar.addEventListener('mouseout', tiraMouse)
+
+// function passaMouse() {    
+//     btnGravar.style.animation = 'moveToRight 10s ease-in-out';
+//     btnGravar.style.delay = '10000ms';    
+//     btnGravar.innerHTML = '<i class="fa-solid fa-microphone"></i> Iniciar';
+// }
+
+// function tiraMouse() {    
+//     btnGravar.innerHTML = '<i class="fa-solid fa-microphone"></i>'        
+    
+// }
