@@ -86,7 +86,7 @@ textarea::-webkit-scrollbar-thumb {
 
 .botoes {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     column-gap: 10px;
     margin-top: 5px;
 }
@@ -169,12 +169,7 @@ footer span, a {
 
     .logo span {
         font-size: 14px;
-    }
-
-    .botoes-add {
-        display: flex;
-        justify-content: center;
-    }
+    }    
 
     .botoes button {
         margin: 10px 5px 0 5px;

@@ -16,7 +16,13 @@ const suporte = window.SpeechRecognition || window.webkitSpeechRecognition
         // ok. Irá executar a aplicação
     }
     else {
-        alert('Seu navegador não tem suporte para uso da ferramenta, por gentileza tente acessar em outro.');
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            showCloseButton: true,
+            text: 'Seu navegador não tem suporte para uso da ferramenta! Por favor acesse em outro.',
+            // footer: '<a style="color: black" href="https://www.google.com/">Chrome</a>'            
+        })
     }
 
 // criando classe da Api
@@ -112,13 +118,39 @@ function download(text, filename) {
 
 // limpeza e exclusão do conteúdo
 btnLimpar.addEventListener('click', () => {
-    if(textarea.value != '') {
-        textarea.value = ""
-        btnGravar.disabled = false
-    }
-    else {
-        alert("O conteúdo está vazio!");
-    }
+    Swal.fire({        
+        icon: 'question',
+        title: 'Deseja limpar o conteúdo?',
+        text: 'Se você confirmar todo conteúdo será perdido.',
+        confirmButtonText: 'Sim',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar',
+        cancelButtonColor: '#d33',
+        showCloseButton: true,
+    }).then((result) => {
+        if(result.isConfirmed) {            
+            if(textarea.value != '') {
+                textarea.value = ""
+                btnGravar.disabled = false
+
+                Swal.fire({            
+                    title: "Conteúdo limpo!",        
+                    icon: 'success',
+                    showCloseButton: true,
+                    timer: 1500
+                });
+            }
+            else {
+                Swal.fire({
+                    title: "O conteúdo está vazio!",
+                    icon: 'info',
+                    showCloseButton: true,
+                    timer: 1500                    
+                });
+            }        
+        }
+    })
+
     // btnParar.disabled = true
     // speech.stop()
 })
@@ -132,19 +164,43 @@ copiar.addEventListener('click', () => {
         texto.setSelectionRange(0, 99999)
         document.execCommand("copy")
 
-        copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiado'
-
-        setTimeout(() => {
-            copiar.innerHTML = '<i class="fa-solid fa-copy"></i> Copiar'
-        }, 900);
+        Swal.fire({
+            icon: 'success',
+            title: 'Texto copiado!',            
+            text: 'Conteúdo copiado!',
+            showCloseButton: true,
+            timer: 2000
+        });
     }
+
     else {
-        alert("Nenhum conteúdo para copiar!")
+        Swal.fire({
+            icon: 'info',
+            title: 'Nenhum conteúdo para copiar!',
+            text: 'Você precisa ter algum conteúdo para poder copiar.',
+            showCloseButton: true
+        })        
     }    
 })
 
 atualizar.addEventListener('click', () => {
-    window.location.reload();
+    Swal.fire({
+        icon: 'warning',
+        title: 'Deseja atualizar a página?',
+        text: 'A atualização recarregará a página e todo conteúdo será perdido.',
+        confirmButtonText: 'Sim',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar',
+        showCloseButton: true,
+        cancelButtonColor: '#d33',
+    }).then((result) => {
+        if(result.isConfirmed) {
+            window.location.reload();
+        }
+    })
+    
+    // criar if e else perguntando se o usuário atualizar a página, o conteúdo será perdido.
+    // fazer a mesma coisa na função limpar.
 })
 
 textarea.style.height = '200px'
