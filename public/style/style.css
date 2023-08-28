@@ -85,20 +85,27 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 .botoes {
-    display: flex;
+    display: block;
     justify-content: space-around;
+    width: 100%;
     column-gap: 10px;
     margin-top: 5px;
 }
 
-.botoes button {    
+#teste button {
+    margin: 0 10px 0 10px;
+}
+
+.botoes button {
     margin: 10px 5px 0 5px;
     color: white;
     text-align: center;
     border-radius: 5px;
-    border: none;
+    border: none;    
     font-size: 15px;
     font-weight: 600;    
+    text-transform: uppercase;
+    padding: 5px;
 }
 
 .botoes i {
@@ -129,6 +136,10 @@ textarea::-webkit-scrollbar-thumb {
 .instrucoes, .sobre, .politica {
     margin-top: 4em;
     text-align: justify;
+}
+
+.instrucoes li {
+    margin: 5px 0 5px 0;
 }
 
 .politica {
@@ -177,8 +188,8 @@ footer span, a {
         text-align: center;
         border-radius: 5px;
         border: none;
-        font-size: 15px;
+        font-size: 12px;
         font-weight: 600;
-        width: 100%;    
+        
     }
 }

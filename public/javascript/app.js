@@ -84,10 +84,36 @@ btnParar.addEventListener('click', () => {
     speech.stop()
 })
 
+// copiar
+copiar.addEventListener('click', () => {
+    if(textarea.value != '') {
+        let texto = document.querySelector("#textarea")
+        texto.select()
+        texto.setSelectionRange(0, 99999)
+        document.execCommand("copy")
 
-// download do conteúdo
+        Swal.fire({
+            icon: 'success',
+            title: 'Conteúdo copiado!',            
+            showCloseButton: true,
+            timer: 2000
+        });
+    }
+
+    else {
+        Swal.fire({
+            icon: 'info',
+            title: 'Nenhum conteúdo para copiar!',
+            text: 'Você precisa ter algum conteúdo para poder copiar.',
+            showCloseButton: true,
+            timer: 2500
+        })        
+    }    
+})
+
+// baixar
 btnBaixar.addEventListener('click', () => {
-    var text = textarea.value
+    var text = textarea.value    
 
     if(textarea.value != '' && titulo.value == '') {
         var filename = "convertvoice.txt"        
@@ -100,10 +126,17 @@ btnBaixar.addEventListener('click', () => {
     }
 
     else {
-        alert("Preencha com conteúdo para baixar!")
+        Swal.fire({
+            icon: 'info',
+            showCloseButton: true,
+            title: 'Não é possível baixar o arquivo sem conteúdo!',
+            text: 'Preencha com conteúdo para baixar.',
+            timer: 2500
+        })
     }
 })
 
+// função para baixar
 function download(text, filename) {
     var element = document.createElement('a')
 
@@ -116,73 +149,46 @@ function download(text, filename) {
 }
 
 
-// limpeza e exclusão do conteúdo
+// limpar
 btnLimpar.addEventListener('click', () => {
-    Swal.fire({        
-        icon: 'question',
-        title: 'Deseja limpar o conteúdo?',
-        text: 'Se você confirmar todo conteúdo será perdido.',
-        confirmButtonText: 'Sim',
-        showCancelButton: true,
-        cancelButtonText: 'Cancelar',
-        cancelButtonColor: '#d33',
-        showCloseButton: true,
-    }).then((result) => {
-        if(result.isConfirmed) {            
-            if(textarea.value != '') {
+    if(textarea.value != '') {
+        Swal.fire({        
+            icon: 'question',
+            title: 'Deseja limpar o conteúdo?',
+            text: 'Se você confirmar todo conteúdo será perdido.',
+            confirmButtonText: 'Sim',
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar',
+            cancelButtonColor: '#d33',
+            showCloseButton: true,
+        }).then((result) => {
+            if(result.isConfirmed) {            
                 textarea.value = ""
                 btnGravar.disabled = false
-
+                
                 Swal.fire({            
                     title: "Conteúdo limpo!",        
                     icon: 'success',
                     showCloseButton: true,
                     timer: 1500
                 });
-            }
-            else {
-                Swal.fire({
-                    title: "O conteúdo está vazio!",
-                    icon: 'info',
-                    showCloseButton: true,
-                    timer: 1500                    
-                });
-            }        
-        }
-    })
+            }            
+        })            
+    }
+    else {
+        Swal.fire({
+            title: "O conteúdo está vazio!",
+            icon: 'info',
+            showCloseButton: true,
+            timer: 2500
+        });
+    }    
 
     // btnParar.disabled = true
     // speech.stop()
 })
 
-
-// copiar texto
-copiar.addEventListener('click', () => {
-    if(textarea.value != '') {
-        let texto = document.querySelector("#textarea")
-        texto.select()
-        texto.setSelectionRange(0, 99999)
-        document.execCommand("copy")
-
-        Swal.fire({
-            icon: 'success',
-            title: 'Texto copiado!',            
-            text: 'Conteúdo copiado!',
-            showCloseButton: true,
-            timer: 2000
-        });
-    }
-
-    else {
-        Swal.fire({
-            icon: 'info',
-            title: 'Nenhum conteúdo para copiar!',
-            text: 'Você precisa ter algum conteúdo para poder copiar.',
-            showCloseButton: true
-        })        
-    }    
-})
-
+// atualizar
 atualizar.addEventListener('click', () => {
     Swal.fire({
         icon: 'warning',
@@ -198,24 +204,7 @@ atualizar.addEventListener('click', () => {
             window.location.reload();
         }
     })
-    
-    // criar if e else perguntando se o usuário atualizar a página, o conteúdo será perdido.
-    // fazer a mesma coisa na função limpar.
 })
 
-textarea.style.height = '200px'
-textarea.style.height = textarea.scrollHeight + 'px'
-
-// btnGravar.addEventListener('mouseover', passaMouse);
-// btnGravar.addEventListener('mouseout', tiraMouse)
-
-// function passaMouse() {    
-//     btnGravar.style.animation = 'moveToRight 10s ease-in-out';
-//     btnGravar.style.delay = '10000ms';    
-//     btnGravar.innerHTML = '<i class="fa-solid fa-microphone"></i> Iniciar';
-// }
-
-// function tiraMouse() {    
-//     btnGravar.innerHTML = '<i class="fa-solid fa-microphone"></i>'        
-    
-// }
+// textarea.style.height = '200px'
+// textarea.style.height = textarea.scrollHeight + 'px'

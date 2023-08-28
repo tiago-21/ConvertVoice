@@ -59,18 +59,8 @@
                 
                 <textarea id="textarea"></textarea>
 
-                <div class="botoes">
-                    <div>
-                        <button id="btnCopiar" title="Copiar" type="button" class="btn btn-dark btn-sm">
-                            <i class="fa-solid fa-copy"></i> <span class="botoes-add-text">Copiar</span>
-                        </button>
-
-                        <button id="btnBaixar" title="Baixar texto" type="button" class="btn btn-primary btn-sm">
-                            <i class="fa-solid fa-file-arrow-down"></i> <span class="botoes-add-text">Baixar</span>
-                        </button>
-                    </div>
-
-                    <div>
+                <div class="botoes">                    
+                    <div style="display: flex; justify-content: center; margin: 10px 0 20px 0;">
                         <button id="btnGravar" title="Iniciar" type="button" class="btn btn-success btn-sm">
                             <i class="fa-solid fa-microphone"></i> <span>Iniciar</span>
                         </button>
@@ -80,12 +70,20 @@
                         </button>
                     </div>
 
-                    <div>
+                    <div style="display: flex; justify-content: center;" id="teste">
+                        <button id="btnCopiar" title="Copiar" type="button" class="btn btn-dark btn-sm">
+                            <i class="fa-solid fa-copy"></i> <span class="botoes-add-text">Copiar</span>
+                        </button>
+
+                        <button id="btnBaixar" title="Baixar texto" type="button" class="btn btn-info btn-sm">
+                            <i class="fa-solid fa-file-arrow-down"></i> <span class="botoes-add-text">Baixar</span>
+                        </button>
+
                         <button id="btnLimpar" title="Limpar texto" type="button" class="btn btn-secondary btn-sm">
                             <i class="fa-solid fa-trash"></i> <span class="botoes-add-text">Limpar</span>
                         </button>
 
-                        <button id="btnAtualizar" title="Atualizar" type="button" class="btn btn-warning btn-sm">
+                        <button id="btnAtualizar" title="Atualizar" type="button" class="btn btn-primary btn-sm">
                             <i class="fa-solid fa-rotate"></i> <span class="botoes-add-text">Atualizar</span>
                         </button>
                     </div>                    
@@ -94,25 +92,43 @@
                 <div class="instrucoes">
                     <h4> <i class="fa-solid fa-circle-info" style="color: #ffffff;"></i> Dicas de uso</h4>
                     <hr>
-                    
-                    <h6>Principais</h6>
+                                        
                     <ol>                        
-                        <li>Clique no botão <span id="text">Iniciar</span> para dar início a captura de voz ou áudio. O processo de captura não tem fim, ele só é encerrado quando você interromper.</li>
-                        <li>Logo em seguida, aceite a permissão do navegador para usar o microfone, clique em <span id="text">Permitir</span>. </li>
-                        <li>Se desejar parar o processo de captura, clique em <span id="text">Parar</span>. Se desejar voltar novamente clique em <span id="text">Iniciar</span>.</li>
-                        <li>Caso deseje <span id="text">apagar</span> todo conteúdo, clique em <span id="text">Limpar</span>.</li>
-                        <li>Se <span id="text">deseja baixar</span> o que foi escrito, basta clicar em <span id="text">Baixar</span>. Será realizado o download de um arquivo no formato .txt para sua máquina, contendo o conteúdo do que foi transcrito.</li>
                         <li>
-                            Enquanto você estiver falando não se preocupe se o texto não aparecer imediatamente, ao final da sua fala todo texto será transcrito na sua tela. <br>
-                            Isso porque existe um tempo de resposta e processamento no processo de transcrição.
+                            Verifique se seu navegador tem permissão para usar o microfone. Vá em Configurações do navegador e verifique. Para permitir o uso do microfone clique em <span id="text">Permitir</span>.
+                        </li>                        
+
+                        <li>
+                            Para dar início a captura de voz e/ou áudio clique em <span id="text"><i class="fa-solid fa-microphone"></i> Iniciar</span>. O processo de captura não tem fim e será encerrado quando você interromper.
                         </li>
-                        <li>Caso a ferramenta apresente alguma demora na transcrição, clique em <span id="text">Atualizar</span> para recarregar a página.</li>
+
+                        <li>
+                            Se desejar parar o processo de captura, clique em <span id="text"><i class="fa-regular fa-circle-stop"></i> Parar</span>. Se desejar voltar novamente clique em <span id="text"><i class="fa-solid fa-microphone"></i> Iniciar</span>.
+                        </li>
+
+                        <li>
+                            Caso deseje apagar todo conteúdo, clique em <span id="text"><i class="fa-solid fa-trash"></i> Limpar</span>.
+                        </li>
+                        
+                        <li>
+                            Se deseja baixar o que foi escrito, clique em <span id="text"><i class="fa-solid fa-file-arrow-down"></i> Baixar</span>. <br>
+                            Será realizado o download de um arquivo no formato .txt para sua máquina, contendo o conteúdo do que foi transcrito.
+                        </li>
+                        
+                        <li>
+                            Caso você estiver falando e a ferramenta apresente demore para transcrever, clique em <span id="text"><i class="fa-solid fa-rotate"></i> Atualizar</span> para recarregar a página.
+                        </li>                        
                     </ol>
 
                     <h6>Outras dicas</h6>
                     <ul>                        
-                        <li>Você também pode preencher com um título sobre o que você irá transcrever. Basta apenas digitar no campo acima da caixa de texto.</li>
-                        <li>Caso você queira corrigir ou adicionar uma nova palavra dentro da caixa de texto, basta clicar nela e digitar.</li>
+                        <li>
+                            Você também pode preencher com um título sobre o que você irá transcrever. Basta apenas digitar no campo acima da caixa de texto.
+                        </li>
+
+                        <li>
+                            Caso você queira corrigir ou adicionar uma nova palavra dentro da caixa de texto, basta clicar nela e digitar.
+                        </li>
                     </ul>
                 </div>
 
