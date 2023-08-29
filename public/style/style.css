@@ -43,6 +43,7 @@ nav {
 
 article {
     margin-bottom: 2em;
+    text-align: initial;
 }
 
 article p {
@@ -53,7 +54,12 @@ article p {
 article div {
     display: grid;
     grid-template-columns: auto auto;
-    column-gap: 15px;    
+    column-gap: 15px;
+}
+
+article div span {
+    margin-top: 10px;
+    text-align: justify;
 }
 
 article div i {
@@ -100,10 +106,6 @@ textarea::-webkit-scrollbar-thumb {
     width: 100%;
     column-gap: 10px;
     margin-top: 5px;
-}
-
-#teste button {
-    
 }
 
 .botoes button {
@@ -202,13 +204,13 @@ footer span, a {
     
     article div { 
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
         column-gap: 25px;    
         font-size: 12px;
     }
 
     article div span {
-        margin-top: 15px;
+        margin-top: 5px;
     }
 
     .botoes button {
