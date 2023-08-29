@@ -42,12 +42,22 @@ nav {
 } */
 
 article {
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 article p {
     text-align: justify;
     font-size: 1.3em;
+}
+
+article div {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 15px;    
+}
+
+article div i {
+    color: green;
 }
 
 #titulo {
@@ -93,7 +103,7 @@ textarea::-webkit-scrollbar-thumb {
 }
 
 #teste button {
-    margin: 0 10px 0 10px;
+    
 }
 
 .botoes button {
@@ -102,38 +112,42 @@ textarea::-webkit-scrollbar-thumb {
     text-align: center;
     border-radius: 5px;
     border: none;    
-    font-size: 15px;
-    font-weight: 600;    
+    font-size: 14px;
+    font-weight: 600;
     text-transform: uppercase;
-    padding: 5px;
+    padding: 10px;
+    box-sizing: border-box;    
 }
 
-.botoes i {
-    padding: 5px;
+.botoes button:hover {
+    color: black;
+    transition: 0.3s ease-in-out;
 }
 
 #btnGravar:hover {
     background-color:rgb(72, 214, 96);
-    transition: 0.3s linear;
+    transition: 0.3s ease-in-out;
 }
 
 #btnParar:hover {
     background-color:rgb(255, 105, 105);
-    transition: 0.3s linear;
+    transition: 0.3s ease-in-out;
 }
 
-.gravar i {
-    color: #0de109;
-    padding: 5px;    
+.botoes-one {
+    display: flex; 
+    justify-content: center;
+    
 }
 
-.parar i {
-    color: #fb0e26;
-    padding: 5px;    
+.botoes-two {
+    display: flex;
+    justify-content: center;
+    
 }
 
 /* sobre, dicas e politica */
-.instrucoes, .sobre, .politica {
+.instrucoes, .sobre, .duvidas, .politica {
     margin-top: 4em;
     text-align: justify;
 }
@@ -182,6 +196,21 @@ footer span, a {
         font-size: 14px;
     }    
 
+    article {
+        margin-bottom: 1.5em;
+    }
+    
+    article div { 
+        display: grid;
+        grid-template-columns: auto auto;
+        column-gap: 25px;    
+        font-size: 12px;
+    }
+
+    article div span {
+        margin-top: 15px;
+    }
+
     .botoes button {
         margin: 10px 5px 0 5px;
         color: white;
@@ -189,7 +218,6 @@ footer span, a {
         border-radius: 5px;
         border: none;
         font-size: 12px;
-        font-weight: 600;
-        
+        font-weight: 600;        
     }
 }
