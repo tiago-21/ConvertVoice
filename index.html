@@ -5,6 +5,9 @@
         <title>Convert Voice | Converta sua voz em texto</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
 
         <!-- Logo do favicon -->
@@ -21,22 +24,26 @@
     <body>
         <div class="conteiner">
             <header>
-                <nav>                    
+                <nav>
                     <div class="logo">
                         <a href="index.html">
                             <img src="icons/android-chrome-512x5121.png" alt="Logo Convert Voice" width="90">
                             <span>Convert Voice</span>
-                        </a>
+                        </a>                        
                     </div>
+
+                    <button onclick="toggleMode()" class="mode">
+                        <i class="fas fa-moon"></i>
+                    </button>
                 </nav>
             </header>
 
             <div class="container">
 
                 <article>
-                    <p>
+                    <h3>
                         Converta áudios e voz para texto, de maneira simples e prática!
-                    </p>
+                    </h3>
 
                     <div>
                         <span>
@@ -98,8 +105,8 @@
                     </div>                    
                 </div>                                                    
 
-                <div class="instrucoes" id="instrucoes">
-                    <h4> Dicas de uso</h4>
+                <div class="dicas-uso">
+                    <h4>Dicas de uso</h4>
                     <hr>
                                         
                     <ol>                        
@@ -120,9 +127,8 @@
                         </li>
                         
                         <li>
-                            Se deseja baixar o que foi escrito, clique em <span id="text"><i class="fa-solid fa-file-arrow-down"></i> Baixar</span>. <br>
-                            Será realizado o download de um arquivo de texto no formato .txt para sua máquina do conteúdo do que foi transcrito.
-                            Atenção: 
+                            Se deseja baixar o que foi escrito, clique em <span id="text"><i class="fa-solid fa-file-arrow-down"></i> Baixar</span>.
+                            Será realizado o download de um arquivo de texto no formato .txt para sua máquina do conteúdo do que foi transcrito.                            
                         </li>
                         
                         <li>
@@ -145,9 +151,9 @@
 
             <footer>
                 <div class="copy">
-                    <span>
+                    <span class="copy-text">
                         Copyright &copy; 2023 - Convert Voice - Todos os direitos reservados <br>
-                        Desenvolvido por <a href="https://www.linkedin.com/in/tiago-rodrigues01/" target="_blank"> Tiago Rodrigues</a>
+                        Desenvolvido por <a href="https://www.linkedin.com/in/tiagorodrigues-dev/" target="_blank" class="copy-text"> Tiago Rodrigues</a>
                     </span>
                 </div>
             </footer>

@@ -1,3 +1,4 @@
+
 // constantes
 const textarea = document.querySelector("#textarea");
 const btnGravar = document.querySelector("#btnGravar");
@@ -7,6 +8,8 @@ const btnLimpar = document.querySelector("#btnLimpar");
 const titulo = document.querySelector("#titulo");
 const copiar = document.querySelector("#btnCopiar");
 const atualizar = document.querySelector('#btnAtualizar');
+const mode = document.querySelector(".mode");
+const copyright = document.querySelector(".copy-text");
 btnParar.disabled = true;
 
 // verifica se o navegador tem compatibilidade e suporta a Api
@@ -183,9 +186,6 @@ btnLimpar.addEventListener('click', () => {
             timer: 2500
         });
     }    
-
-    // btnParar.disabled = true
-    // speech.stop()
 })
 
 // atualizar
@@ -206,5 +206,41 @@ atualizar.addEventListener('click', () => {
     })
 })
 
-// textarea.style.height = '200px'
-// textarea.style.height = textarea.scrollHeight + 'px'
+function toggleMode() {
+    var body = document.body    
+
+    body.classList.toggle("dark-mode");
+    var isDarkMode = body.classList.contains("dark-mode");
+    localStorage.setItem("darkMode", isDarkMode);
+
+    if(isDarkMode) {
+        mode.innerHTML = '<i class="fas fa-sun"></i>';
+        btnGravar.style.color = "white"
+        btnParar.style.color = "white"
+        copiar.style.color = "white"
+        btnBaixar.style.color = "white"
+        btnLimpar.style.color = "white"
+        atualizar.style.color = "white"
+        copyright.style.color = "white"
+    }
+    else {
+        mode.innerHTML = '<i class="fas fa-moon"></i>';
+        btnGravar.style.color = "black"
+        btnParar.style.color = "black"
+        copiar.style.color = "black"
+        btnBaixar.style.color = "black"
+        btnLimpar.style.color = "black"
+        atualizar.style.color = "black"
+        copyright.style.color = "black"
+    }
+    
+}
+
+window.addEventListener("load", e => {
+    var isDarkMode = localStorage.getItem("darkMode") === "true";
+
+    if (isDarkMode) {
+        document.body.classList.add("dark-mode");
+        mode.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+})
