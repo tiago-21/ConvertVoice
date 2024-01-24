@@ -1,8 +1,9 @@
 ## Funcionalidades
 <p>A aplicação tem como funcionalidade principal transcrever áudios em textos. No entanto, existem outras funcionalidades como:</p>
 <ul>
-  <li>Gravar e editar o conteúdo que foi transcrito</li>
+  <li>Gravar e editar o conteúdo que foi transcrito</li>  
   <li>Realizar o download do conteúdo em formato .txt</li>
+  <li>Responsividade para dispositivos móveis e tablets</li>
   <li>Modo light e dark</li>    
 </ul>
 
