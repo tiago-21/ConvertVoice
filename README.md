@@ -1,3 +1,11 @@
+## Funcionalidades
+<p>A aplicação tem como funcionalidade principal transcrever áudios em textos. No entanto, existem outras funcionalidades como:</p>
+<ul>
+  <li>Gravar e editar o conteúdo que foi transcrito</li>
+  <li>Realizar o download do conteúdo em formato .txt</li>
+  <li>Modo light e dark</li>    
+</ul>
+
 ## Pré-requisitos
   <ul>
     <li>Ter acesso a internet.</li>
@@ -39,11 +47,12 @@
 ## Versões
 <div>
   <li>Desktop:</li> <br>
-  <img src="https://user-images.githubusercontent.com/68871083/262797302-b4db56c0-335e-433e-a875-9abb0b9c5e48.png"><br><br><br>
+  <img src="https://github.com/tiagorodri-dev/ConvertVoice/assets/68871083/9642bbba-c73d-4177-b74c-ea262c21d787"><br><br><br>
 
   <li>Mobile:</li> <br>
-  <img src="https://user-images.githubusercontent.com/68871083/262796690-49346d09-8f91-4adb-ad01-c9437f7eb03b.png"> <br><br><br>
+  <img src="https://github.com/tiagorodri-dev/ConvertVoice/assets/68871083/cca185e9-3cbe-4cfa-b48b-5c2298f1baa8"> <br><br><br>
 
   <li>Tablet:</li> <br>
-  <img src="https://user-images.githubusercontent.com/68871083/262798898-cc0a122e-9d81-4432-bea3-6bdf4854f086.png">
+  <img src="https://github.com/tiagorodri-dev/ConvertVoice/assets/68871083/1e5326d5-446b-4731-bfeb-bf53764d9005">
+
 </div>
