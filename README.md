@@ -1,5 +1,5 @@
 ## Aplicação
-https://convert-voice.vercel.app/
+<a href="https://convert-voice.vercel.app/" target="_blank"></a>
 
 ## Funcionalidades
 <p>A aplicação tem como funcionalidade principal transcrever áudios em textos. No entanto, existem outras funcionalidades como:</p>
