@@ -7,7 +7,8 @@
   <li>Gravar e editar o conteúdo que foi transcrito</li>  
   <li>Realizar o download do conteúdo em formato .txt</li>
   <li>Responsividade para dispositivos móveis e tablets</li>
-  <li>Modo light e dark</li>    
+  <li>Modo light e dark</li>
+  <li>Armazena o tema em localStorage escolhido pelo usuário</li>
 </ul>
 
 ## Pré-requisitos
