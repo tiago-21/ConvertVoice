@@ -7,7 +7,7 @@ https://convert-voice.vercel.app/
 <br><br>
 
 ## 🎯 Objetivo:
-<span>A aplicação tem como objetivo principal transcrever áudios em textos.</span>
+<span>Explorar o uso da API Reconigition com Javascript, utilizando: Manipulação do DOM, eventos, funções, estruturas de decisão, etc.</span>
 <br><br>
 
 ## ⚡ Funcionalidades:
